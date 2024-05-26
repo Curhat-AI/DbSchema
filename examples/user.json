@@ -1,0 +1,61 @@
+[
+  {
+    "id": "a",
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "roles": {
+      "counselor": true,
+      "patient": false
+    },
+    "details": {
+      "dob": "1990-01-01",
+      "gender": "m",
+      "photoUrl": "https://example.com/john-doe.jpg",
+      "phone": "+1234567890"
+    },
+    "counselorDetails": {
+      "name": "John Doe, M. Psi.",
+      "bio": "Experienced counselor specializing in anxiety and depression.",
+      "experience": 5,
+      "counselorType": "professional",
+      "expertise": "Anxiety, Depression"
+    }
+  },
+  {
+    "id": "b",
+    "email": "jane.smith@example.com",
+    "name": "Jane Smith",
+    "roles": {
+      "counselor": false,
+      "patient": true
+    },
+    "details": {
+      "dob": "1995-05-10",
+      "gender": "f",
+      "photoUrl": "https://example.com/jane-smith.jpg",
+      "phone": "+9876543210"
+    }
+  },
+  {
+    "id": "c",
+    "email": "james.brown@example.com",
+    "name": "James Brown",
+    "roles": {
+      "counselor": true,
+      "patient": false
+    },
+    "details": {
+      "dob": "1985-07-15",
+      "gender": "m",
+      "photoUrl": "https://example.com/james-brown.jpg",
+      "phone": "+9876543210"
+    },
+    "counselorDetails": {
+      "name": "James B.",
+      "bio": "Experienced counselor specializing in relationship issues.",
+      "experience": 0,
+      "counselorType": "peer",
+      "expertise": "Relationship Issues"
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "a",
+    "userId": "a",
+    "emotion": "Sadness",
+    "imageUrl": "https://example.com/image.jpg",
+    "detectionTime": "2024-05-26T10:15:30Z"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "a",
+    "scheduleId": "a",
+    "startTime": "2024-05-26T10:15:30Z",
+    "endTime": "2024-05-26T11:15:30Z",
+    "counselorFeedback": "Session went well, patient seemed receptive.",
+    "patientFeedback": "Found the session helpful.",
+    "rating": 4
+  }
+]

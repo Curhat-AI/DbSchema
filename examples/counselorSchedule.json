@@ -1,0 +1,31 @@
+[
+  {
+    "id": "a",
+    "counselorId": "a",
+    "patientId": "a",
+    "sessionId": "a",
+    "startTime": "09:00:00",
+    "endTime": "10:00:00",
+    "meetingLink": "https://meet.google.com/abc-def-ghi",
+    "communicationPreference": "video_call"
+  },
+  {
+    "id": "b",
+    "counselorId": "b",
+    "patientId": "b",
+    "sessionId": "b",
+    "startTime": "10:00:00",
+    "endTime": "11:00:00",
+    "meetingLink": "https://meet.google.com/jkl-mno-pqr",
+    "communicationPreference": "call"
+  },
+  {
+    "id": "c",
+    "counselorId": "c",
+    "patientId": "c",
+    "sessionId": "c",
+    "startTime": "11:00:00",
+    "endTime": "12:00:00",
+    "communicationPreference": "chat"
+  }
+]
