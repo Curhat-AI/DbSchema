@@ -1,11 +1,11 @@
 {
   {
-    "id": "uuid-4567-8901-23de-fabc",
+    "id": "a",
     "sessionId": "uuid-3456-7890-12cd-efab",
-    "counselingFee": 100.00,
-    "discount": 10.00,
-    "tax": 5.00,
-    "totalPayment": 95.00,
+    "counselingFee": 249000.00,
+    "discount": 0.00,
+    "tax": 0.00,
+    "totalPayment": 249000.00,
     "paymentDate": "2024-06-17T12:00:00Z"
   }
 }
