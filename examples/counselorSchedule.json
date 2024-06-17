@@ -1,31 +1,19 @@
 [
   {
-    "id": "a",
-    "counselorId": "a",
-    "patientId": "a",
-    "sessionId": "a",
+    "id": a,
+    "counselorId": "uuid-2345-6789-01bc-defa",
+    "availableDate": "2024-06-20",
     "startTime": "09:00:00",
     "endTime": "10:00:00",
-    "meetingLink": "https://meet.google.com/abc-def-ghi",
-    "communicationPreference": "video_call"
+    "isBooked": false,
+    "createdAt": "2024-06-17T12:00:00Z"
   },
   {
-    "id": "b",
-    "counselorId": "b",
-    "patientId": "b",
-    "sessionId": "b",
-    "startTime": "10:00:00",
-    "endTime": "11:00:00",
-    "meetingLink": "https://meet.google.com/jkl-mno-pqr",
-    "communicationPreference": "call"
-  },
-  {
-    "id": "c",
-    "counselorId": "c",
-    "patientId": "c",
-    "sessionId": "c",
-    "startTime": "11:00:00",
-    "endTime": "12:00:00",
-    "communicationPreference": "chat"
+    "id": b,
+    "counselorId": "uuid-2345-6789-01bc-defa",
+    "availableDate": "2024-06-16",
+    "startTime": "09:00:00",
+    "endTime": "10:00:00",
+    "isBooked": true,
+    "createdAt": "2024-06-15T12:00:00Z"
   }
-]
