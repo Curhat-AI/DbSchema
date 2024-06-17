@@ -6,7 +6,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE userDetails (
-    id VARCHAR(36) PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     userId VARCHAR(36) UNIQUE,
     dob DATE NOT NULL,
     gender ENUM('m', 'f') NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE userDetails (
 );
 
 CREATE TABLE counselorDetails (
-    id VARCHAR(36) PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     userId VARCHAR(36) UNIQUE,
     name VARCHAR(100),
     bio TEXT,
@@ -28,7 +28,7 @@ CREATE TABLE counselorDetails (
 );
 
 CREATE TABLE userRoles (
-    id VARCHAR(36) PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     userId VARCHAR(36) NOT NULL,
     isPatient BOOLEAN DEFAULT false,
     isCounselor BOOLEAN DEFAULT false,
@@ -37,7 +37,7 @@ CREATE TABLE userRoles (
 );
 
 CREATE TABLE emotionDetections (
-    id VARCHAR(36) PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     userId VARCHAR(36) NOT NULL,
     emotion VARCHAR(50) NOT NULL,
     imageUrl VARCHAR(255),
@@ -47,7 +47,7 @@ CREATE TABLE emotionDetections (
 );
 
 CREATE TABLE counselorSchedules (
-    id VARCHAR(36) PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     counselorId VARCHAR(36) NOT NULL,
     availableDate DATE NOT NULL,
     startTime TIME NOT NULL,
@@ -61,6 +61,7 @@ CREATE TABLE counselingSessions (
     id VARCHAR(36) PRIMARY KEY,
     counselorId VARCHAR(36) NOT NULL,
     patientId VARCHAR(36) NOT NULL,
+    scheduleId INT NOT NULL,
     startTime TIMESTAMP,
     endTime TIMESTAMP,
     status ENUM('Berlangsung', 'Terlewat', 'Akan Datang', 'Dibatalkan', 'Selesai'),
@@ -69,8 +70,24 @@ CREATE TABLE counselingSessions (
     counselorFeedback TEXT,
     patientFeedback TEXT,
     rating INT,
+    counselingFee DECIMAL(10, 2) NOT NULL,
+    discount DECIMAL(10, 2) NOT NULL,
+    tax DECIMAL(10, 2) NOT NULL,
+    totalPayment DECIMAL(10, 2) NOT NULL,
+    paymentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    paymentStatus ENUM('Sedang Menunggu Pembayaran', 'Berhasil Melakukan Pembayaran', 'Batal Melakukan Pembayaran') DEFAULT 'Sedang Menunggu Pembayaran',
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (counselorId) REFERENCES counselorDetails(userId),
-    FOREIGN KEY (patientId) REFERENCES userRoles(userId)
+    FOREIGN KEY (patientId) REFERENCES userRoles(userId),
+    FOREIGN KEY (scheduleId) REFERENCES counselorSchedules(id)
 );
 
+-- Trigger to ensure payment is completed before session can proceed
+CREATE TRIGGER trg_before_session
+BEFORE INSERT ON counselingSessions
+FOR EACH ROW
+BEGIN
+    IF NEW.paymentStatus != 'Berhasil Melakukan Pembayaran' THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Pembayaran tidak berhasil, tidak dapat melanjutkan sesi konsultasi.';
+    END IF;
+END;
