@@ -1,11 +1,16 @@
 [
   {
-    "id": "a",
-    "scheduleId": "a",
-    "startTime": "2024-05-26T10:15:30Z",
-    "endTime": "2024-05-26T11:15:30Z",
-    "counselorFeedback": "Session went well, patient seemed receptive.",
-    "patientFeedback": "Found the session helpful.",
-    "rating": 4
+    "id": "uuid-3456-7890-12cd-efab",
+    "counselorId": "uuid-2345-6789-01bc-defa",
+    "patientId": "uuid-1234-5678-90ab-cdef",
+    "startTime": "2024-06-20T09:00:00Z",
+    "endTime": "2024-06-20T10:00:00Z",
+    "status": "Selesai",
+    "meetingLink": "http://example.com/meeting",
+    "communicationPreference": "video_call",
+    "counselorFeedback": "Great session, patient is making progress.",
+    "patientFeedback": "Very helpful session.",
+    "rating": 5,
+    "createdAt": "2024-06-17T12:00:00Z"
   }
 ]
