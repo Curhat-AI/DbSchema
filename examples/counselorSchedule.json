@@ -1,6 +1,6 @@
 [
   {
-    "id": a,
+    "id": "a",
     "counselorId": "uuid-2345-6789-01bc-defa",
     "availableDate": "2024-06-20",
     "startTime": "09:00:00",
@@ -9,7 +9,7 @@
     "createdAt": "2024-06-17T12:00:00Z"
   },
   {
-    "id": b,
+    "id": "b",
     "counselorId": "uuid-2345-6789-01bc-defa",
     "availableDate": "2024-06-16",
     "startTime": "09:00:00",
