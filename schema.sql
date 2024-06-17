@@ -30,8 +30,8 @@ CREATE TABLE counselorDetails (
 CREATE TABLE userRoles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     userId VARCHAR(36) NOT NULL,
-    isPatient BOOLEAN DEFAULT false,
-    isCounselor BOOLEAN DEFAULT false,
+    patient BOOLEAN DEFAULT false,
+    counselor BOOLEAN DEFAULT false,
     FOREIGN KEY (userId) REFERENCES users(id),
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
