@@ -49,12 +49,13 @@ CREATE TABLE emotionDetections (
 CREATE TABLE counselorSchedules (
     id INT PRIMARY KEY AUTO_INCREMENT,
     counselorId VARCHAR(36) NOT NULL,
-    availableDate DATE NOT NULL,
-    startTime TIME NOT NULL,
-    endTime TIME NOT NULL,
-    isBooked BOOLEAN DEFAULT false,
-    FOREIGN KEY (counselorId) REFERENCES counselorDetails(userId),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    availableDate TIMESTAMP NOT NULL,
+    bookedBy VARCHAR(36),
+    startTime TIMESTAMP,
+    endTime TIMESTAMP,
+    status ENUM('Tersedia', 'Sudah Direservasi'),
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (counselorId) REFERENCES counselorDetails(userId)
 );
 
 CREATE TABLE counselingSessions (
